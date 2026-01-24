@@ -2,7 +2,7 @@ import numpy as np
 from .fft import spectrum_db
 
 class SlidingFFT:
-    def __init___(self, fs: int, n_fft: int, hop: int):
+    def __init__(self, fs: int, n_fft: int, hop: int):
         assert hop > 0 and hop <= n_fft
         self.fs = fs
         self.n_fft = n_fft
