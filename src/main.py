@@ -4,6 +4,7 @@ import sounddevice as sd
 
 from audio.ring_buffer import RingBuffer
 from dsp.fft import spectrum_db
+from dsp.peaks import top_peaks
 
 FS = 44100
 BLOCK = 512
@@ -24,5 +25,7 @@ with sd.InputStream(channels=1, samplerate=FS, blocksize=BLOCK, callback=audio_c
 
         # simple "sanity check": print peak frequency
         idx = int(np.argmax(db))
-        print(f"Peak ~ {freqs[idx]:7.1f} Hz | {db[idx]:6.1f} dB")
+        peaks = top_peaks(freqs, db, k=5, fmin=80.0, fmax=5000.0)
+        line = " | ".join([f"{f:6.1f}Hz {a:6.1f}dB" for f, a in peaks])
+        print(line)
         time.sleep(0.1)
