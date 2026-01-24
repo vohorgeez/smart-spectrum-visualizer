@@ -10,7 +10,7 @@ def main():
 
     # Fake spectrum for testing
     freqs = np.linspace(20, 20000, 1025)
-    db = -80 + 20*np.sin(np.linspace(0, 20, len(freqs)))
+    db = -80 + 10*np.sin(np.linspace(0, 20, len(freqs)))
 
     def tick():
         # animate a bit
