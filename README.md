@@ -2,13 +2,17 @@
 
 Real-time audio spectrum visualizer with FFT and harmonic detection.
 
-## v1 goals
-- Real-time mono audio capture
-- Sliding window FFT (512-4096)
-- Hann window
-- Magnitude in dB
-- Linear / logarithmic frequency display
-- Stable real-time behavior (<= 100 ms latency)
+## Status
+v1 complete
 
-## Tech
-Python, NumPy, sounddevice
+### Features
+- Real-time mono audio capture
+- Sliding FFT with Hann window
+- Overlap processing
+- Magnitude spectrum in dB
+- Linear / logarithmic frequency display
+- Stable real-time performance
+
+### Known limitations (planned for v2)
+- UI controls for FFT size and overlap
+- Harmonic detection and labeling
